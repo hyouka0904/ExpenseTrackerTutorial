@@ -1,19 +1,13 @@
 import 'package:flutter/material.dart';
 
+final PageController _pageController = PageController();
+
 class TutorialPage extends StatefulWidget {
   @override
   _TutorialPageState createState() => _TutorialPageState();
 }
 
 class _TutorialPageState extends State<TutorialPage> {
-  final PageController _pageController = PageController();
-
-  @override
-  void dispose() {
-    _pageController.dispose();
-    super.dispose();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +16,7 @@ class _TutorialPageState extends State<TutorialPage> {
       ),
       body: PageView.builder(
         controller: _pageController,
-        itemCount: 2, // 總共有兩頁
+        itemCount: 2,
         itemBuilder: (context, index) {
           switch (index) {
             case 0:
@@ -33,7 +27,7 @@ class _TutorialPageState extends State<TutorialPage> {
               throw Exception('something wrong on pagecontroller');
           }
         },
-        physics: const AlwaysScrollableScrollPhysics(), // 允許使用手勢滑動
+        physics: const AlwaysScrollableScrollPhysics(),
       ),
     );
   }
@@ -51,34 +45,22 @@ class _TutorialScreen1State extends State<TutorialScreen1> {
   @override
   void initState() {
     super.initState();
-    _TutorialPageState? pageViewState =
-        context.findAncestorStateOfType<_TutorialPageState>();
-    if (pageViewState != null) {
-      pageViewState._pageController.addListener(_updateOffsets);
-    }
+    _pageController.addListener(_updateOffsets);
   }
 
   @override
   void dispose() {
-    _TutorialPageState? pageViewState =
-        context.findAncestorStateOfType<_TutorialPageState>();
-    if (pageViewState != null) {
-      pageViewState._pageController.removeListener(_updateOffsets);
-    }
+    _pageController.removeListener(_updateOffsets);
     super.dispose();
   }
 
   void _updateOffsets() {
-    _TutorialPageState? pageViewState =
-        context.findAncestorStateOfType<_TutorialPageState>();
-    if (pageViewState != null) {
-      double pageOffset = pageViewState._pageController.page ?? 0.0;
-      double screenWidth = MediaQuery.of(context).size.width;
-      setState(() {
-        _textOffset = (pageOffset * screenWidth * 0.5);
-        _buttonOffset = (pageOffset * screenWidth * 1.5);
-      });
-    }
+    double pageOffset = _pageController.page ?? 0.0;
+    double screenWidth = MediaQuery.of(context).size.width;
+    setState(() {
+      _textOffset = -(pageOffset * screenWidth * 0.5);
+      _buttonOffset = -(pageOffset * screenWidth * 1.5);
+    });
   }
 
   @override
@@ -88,6 +70,10 @@ class _TutorialScreen1State extends State<TutorialScreen1> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          const Icon(
+            Icons.add,
+            size: 100,
+          ),
           Transform.translate(
             offset: Offset(_textOffset, 0),
             child: const Text(
@@ -111,15 +97,10 @@ class _TutorialScreen1State extends State<TutorialScreen1> {
             offset: Offset(_buttonOffset, 0),
             child: ElevatedButton(
               onPressed: () {
-                // Scroll to the next page
-                _TutorialPageState? pageViewState =
-                    context.findAncestorStateOfType<_TutorialPageState>();
-                if (pageViewState != null) {
-                  pageViewState._pageController.nextPage(
-                    duration: const Duration(milliseconds: 300),
-                    curve: Curves.easeInOut,
-                  );
-                }
+                _pageController.nextPage(
+                  duration: const Duration(milliseconds: 300),
+                  curve: Curves.easeInOut,
+                );
               },
               child: const Text('Next'),
             ),
@@ -142,35 +123,22 @@ class _TutorialScreen2State extends State<TutorialScreen2> {
   @override
   void initState() {
     super.initState();
-    _TutorialPageState? pageViewState =
-        context.findAncestorStateOfType<_TutorialPageState>();
-    if (pageViewState != null) {
-      pageViewState._pageController.addListener(_updateOffsets);
-    }
+    _pageController.addListener(_updateOffsets);
   }
 
   @override
   void dispose() {
-    _TutorialPageState? pageViewState =
-        context.findAncestorStateOfType<_TutorialPageState>();
-    if (pageViewState != null) {
-      pageViewState._pageController.removeListener(_updateOffsets);
-    }
+    _pageController.removeListener(_updateOffsets);
     super.dispose();
   }
 
   void _updateOffsets() {
-    _TutorialPageState? pageViewState =
-        context.findAncestorStateOfType<_TutorialPageState>();
-    if (pageViewState != null) {
-      double pageOffset = (pageViewState._pageController.page) ?? 0.0;
-      pageOffset -= 1;
-      double screenWidth = MediaQuery.of(context).size.width;
-      setState(() {
-        _textOffset = (pageOffset * screenWidth * 0.5);
-        _buttonOffset = (pageOffset * screenWidth * 1.5);
-      });
-    }
+    double pageOffset = (_pageController.page)! - 1.0;
+    double screenWidth = MediaQuery.of(context).size.width;
+    setState(() {
+      _textOffset = -(pageOffset * screenWidth * 0.5);
+      _buttonOffset = -(pageOffset * screenWidth * 1.5);
+    });
   }
 
   @override
@@ -180,6 +148,10 @@ class _TutorialScreen2State extends State<TutorialScreen2> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          const Icon(
+            Icons.add,
+            size: 100,
+          ),
           Transform.translate(
             offset: Offset(_textOffset, 0),
             child: const Text(
