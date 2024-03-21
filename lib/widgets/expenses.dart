@@ -6,6 +6,7 @@ import 'package:flutter_app/widgets/expenses_list/expenses_list.dart';
 import 'package:flutter_app/widgets/expenses_list/expenses_list_sliver.dart';
 import 'package:flutter_app/models/expense.dart';
 import 'package:flutter_app/widgets/chart/chart.dart';
+import 'package:flutter_app/widgets/tutorial_page.dart';
 
 class Expenses extends StatefulWidget {
   const Expenses({super.key});
@@ -107,6 +108,7 @@ class _ExpensesState extends State<Expenses> {
     return AppBar(
       title: const Text('Expense Tracker'),
       actions: [
+        _buildTutorialPageButton(),
         IconButton(
           onPressed: _openAddExpenseOverlay,
           icon: const Icon(Icons.add),
@@ -114,6 +116,18 @@ class _ExpensesState extends State<Expenses> {
       ],
     );
   }
+
+  Widget _buildTutorialPageButton() => IconButton(
+        //tutorial page
+        onPressed: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => TutorialPage(),
+              ));
+        },
+        icon: const Icon(Icons.info),
+      );
 
   Widget _buildPortraitContent() {
     return CustomScrollView(
@@ -134,6 +148,7 @@ class _ExpensesState extends State<Expenses> {
             ),
           ),
           actions: [
+            _buildTutorialPageButton(),
             IconButton(
               onPressed: _openAddExpenseOverlay,
               icon: const Icon(Icons.add),

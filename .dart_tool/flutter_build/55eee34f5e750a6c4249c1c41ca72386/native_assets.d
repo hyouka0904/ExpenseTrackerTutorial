@@ -1,0 +1,1 @@
+ C:\\Users\\USER\\OneDrive\\桌面\\coding\\lab-flutter-basics-dart-expense-tracker-parallax\\.dart_tool\\flutter_build\\55eee34f5e750a6c4249c1c41ca72386\\native_assets.yaml: 

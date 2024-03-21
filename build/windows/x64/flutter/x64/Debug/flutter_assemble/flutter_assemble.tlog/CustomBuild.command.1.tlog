@@ -1,0 +1,28 @@
+^C:\USERS\USER\ONEDRIVE\桌面\CODING\LAB-FLUTTER-BASICS-DART-EXPENSE-TRACKER-PARALLAX\BUILD\WINDOWS\X64\CMAKEFILES\48696BEBCC7F995431EADE3BED278751\FLUTTER_WINDOWS.DLL.RULE
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E env FLUTTER_ROOT=C:\flutter PROJECT_DIR=C:\Users\USER\OneDrive\桌面\coding\lab-flutter-basics-dart-expense-tracker-parallax FLUTTER_ROOT=C:\flutter FLUTTER_EPHEMERAL_DIR=C:\Users\USER\OneDrive\桌面\coding\lab-flutter-basics-dart-expense-tracker-parallax\windows\flutter\ephemeral PROJECT_DIR=C:\Users\USER\OneDrive\桌面\coding\lab-flutter-basics-dart-expense-tracker-parallax FLUTTER_TARGET=C:\Users\USER\OneDrive\桌面\coding\lab-flutter-basics-dart-expense-tracker-parallax\lib\main.dart DART_DEFINES=RkxVVFRFUl9XRUJfQVVUT19ERVRFQ1Q9dHJ1ZQ==,RkxVVFRFUl9XRUJfQ0FOVkFTS0lUX1VSTD1odHRwczovL3d3dy5nc3RhdGljLmNvbS9mbHV0dGVyLWNhbnZhc2tpdC8wNDgxN2M5OWM5ZmQ0OTU2ZjI3NTA1MjA0ZjdlMzQ0MzM1ODEwYWVkLw== DART_OBFUSCATION=false TRACK_WIDGET_CREATION=true TREE_SHAKE_ICONS=false PACKAGE_CONFIG=C:\Users\USER\OneDrive\桌面\coding\lab-flutter-basics-dart-expense-tracker-parallax\.dart_tool\package_config.json C:/flutter/packages/flutter_tools/bin/tool_backend.bat windows-x64 Debug
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\USER\ONEDRIVE\桌面\CODING\LAB-FLUTTER-BASICS-DART-EXPENSE-TRACKER-PARALLAX\BUILD\WINDOWS\X64\CMAKEFILES\4BB4A2769E64E9F0C769170A45080632\FLUTTER_ASSEMBLE.RULE
+setlocal
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\USER\ONEDRIVE\桌面\CODING\LAB-FLUTTER-BASICS-DART-EXPENSE-TRACKER-PARALLAX\WINDOWS\FLUTTER\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/USER/OneDrive/桌面/coding/lab-flutter-basics-dart-expense-tracker-parallax/windows -BC:/Users/USER/OneDrive/桌面/coding/lab-flutter-basics-dart-expense-tracker-parallax/build/windows/x64 --check-stamp-file C:/Users/USER/OneDrive/桌面/coding/lab-flutter-basics-dart-expense-tracker-parallax/build/windows/x64/flutter/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
