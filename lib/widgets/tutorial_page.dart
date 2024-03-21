@@ -20,12 +20,20 @@ class _TutorialPageState extends State<TutorialPage> {
       appBar: AppBar(
         title: const Text('Tutorial'),
       ),
-      body: PageView(
+      body: PageView.builder(
         controller: _pageController,
-        children: [
-          TutorialScreen1(),
-          TutorialScreen2(),
-        ],
+        itemCount: 2, // 總共有兩頁
+        itemBuilder: (context, index) {
+          switch (index) {
+            case 0:
+              return TutorialScreen1();
+            case 1:
+              return TutorialScreen2();
+            default:
+              throw Exception('something wrong on pagecontroller');
+          }
+        },
+        physics: const AlwaysScrollableScrollPhysics(), // 允許使用手勢滑動
       ),
     );
   }
@@ -99,7 +107,6 @@ class _TutorialScreen1State extends State<TutorialScreen1> {
               textAlign: TextAlign.center,
             ),
           ),
-          const Spacer(),
           Transform.translate(
             offset: Offset(_buttonOffset, 0),
             child: ElevatedButton(
@@ -192,7 +199,6 @@ class _TutorialScreen2State extends State<TutorialScreen2> {
               textAlign: TextAlign.center,
             ),
           ),
-          const Spacer(),
           Transform.translate(
             offset: Offset(_buttonOffset, 0),
             child: ElevatedButton(
