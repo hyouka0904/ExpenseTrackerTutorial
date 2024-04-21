@@ -1,4 +1,0 @@
-#Thu Mar 21 22:57:46 CST 2024
-base.0=C\:\\Users\\User\\Desktop\\coding\\flutter\\lab-flutter-basics-dart-expense-tracker-parallax\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
-path.0=classes.dex
-renamed.0=classes.dex

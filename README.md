@@ -3,13 +3,6 @@
 During this lab session, you will need to **add a tutorial screen** with **scrolling function** and **parallax scrolling effects** to the expense application discussed in class.  
 The lab project (courses > software-studio > 2024-spring > lab-flutter-basics-dart-expense-tracker-parallax) provides the expense tracker app with parallax scrollong effect on the item list for you to build on top of.
 
-
-
-# Video Demo
-- [Youtube](https://youtube.com/shorts/zTxxmoRmV3M?feature=shared)
-
-![](img/lab04.mp4)
-
 # Description
 As you can see from the demo video, we want to see a **additional button** on the app bar which leads to a tutorial screen,  
 In the screen, there should be two swipeable (left to right) screens, each of which contains some guidence to use the expense tracker app  
